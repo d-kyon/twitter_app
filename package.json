@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "sample_twitter",
+=======
+  "name": "sample",
+>>>>>>> ceb59991bb3f001aeb5decf5000ac72f6fa19710
   "private": true,
   "dependencies": {}
 }

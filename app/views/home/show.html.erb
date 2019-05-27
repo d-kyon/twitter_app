@@ -1,0 +1,9 @@
+<%@posts.each do |post| %>
+  <p>
+    <%=post.id%> <%=post.content%> <%= link_to "いいね", "/home/#{post.id}/favorite",method: :put%><%=post.favorite%>
+    <%= link_to "編集", "/home/#{post.id}/edit"%>
+    <%= link_to "削除", "/home/#{post.id}/destroy",method: :delete%>
+  </p>
+<%end%>
+
+<%= link_to "作成", "/home/index"%>

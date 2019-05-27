@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'home#show'
+  get 'home/index' => 'home#index'
+  get 'home/show' => 'home#show'
+  post 'home/create' =>'home#create'
+  get 'home/:id/edit' => 'home#edit'
+  put 'home/:id/update' =>'home#update'
+  delete 'home/:id/destroy' =>'home#destroy'
+  put 'home/:id/favorite' => 'home#favorite'
 end

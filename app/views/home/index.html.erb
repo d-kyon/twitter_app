@@ -1,0 +1,6 @@
+<%= form_tag('/home/create', method: :post) do %>
+  <%= text_field_tag :content %>
+  <%= submit_tag "作成" %>
+<% end %>
+
+<%= link_to "一覧", "/home/show"%>
