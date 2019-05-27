@@ -1,17 +1,22 @@
 class HomeController < ApplicationController
 
-  def index
-    render "index"
+  def show
+    @post=Post.find_by(params[:id])
+    render "show"
+  end
+
+  def new
+    render "new"
   end
 
   def create
     Post.create!(content:params[:content],user_id:current_user.id)
-    render "index"
+    redirect_to controller: :home, action: :index
   end
 
-  def show
+  def index
     @posts=Post.all
-    render "show"
+    render "index"
   end
 
 
@@ -22,18 +27,16 @@ class HomeController < ApplicationController
 
   def update
     Post.find_by(id:params[:id]).update!(content:params[:content])
-    redirect_to controller: :home, action: :show
+    redirect_to controller: :home, action: :index
   end
 
   def destroy
     Post.find_by(id:params[:id]).destroy!
-    redirect_to controller: :home, action: :show
+    redirect_to controller: :home, action: :index
   end
 
   def favorite
-    post=Post.find_by(id:params[:id])
-    favorite_number=post.favorite + 1
-    post.update!(favorite:favorite_number)
-    redirect_to controller: :home, action: :show
+    Favorite.create!(user_id:params[:user_id],post_id:params[:id])
+    redirect_to controller: :home, action: :index
   end
 end
