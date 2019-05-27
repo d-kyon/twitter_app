@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def create
-    Post.create!(content:params[:content])
+    Post.create!(content:params[:content],user_id:current_user.id)
     render "index"
   end
 
