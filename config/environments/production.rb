@@ -61,7 +61,11 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
+<<<<<<< HEAD
   # config.active_job.queue_name_prefix = "sample_twitter_#{Rails.env}"
+=======
+  # config.active_job.queue_name_prefix = "sample_#{Rails.env}"
+>>>>>>> ceb59991bb3f001aeb5decf5000ac72f6fa19710
 
   config.action_mailer.perform_caching = false
 
